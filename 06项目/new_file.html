@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+			　　margin: 0;
+			　　padding: 0;
+			}
+			h1 {
+			　　width: 200px;
+			　　height: 200px;
+			　　margin: 0 auto;
+			}
+			div{
+			　　overflow: hidden;
+			　　position: absolute;
+			}
+			.show {
+			　　display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 第一页-->
+	　　<div id="one"class="pops hiddens show">
+	　　　　<h1>杨晓煊</h1>
+	　　</div>
+	<!-- 第二页-->
+	　　<div id="two" class="pops hiddens">
+	　　　　<h1>杨晓煊</h1>
+	　　</div>
+	<!-- 第三页-->
+	　　<div id="three" class="pops hiddens">
+	　　　　<h1>杨晓煊</h1>
+	　　</div>	
+	<!-- 第四页-->
+	　　<div id="four" class="pops hiddens">
+	　　　　<h1>杨晓煊</h1>
+	　　</div>
+	</body>
+	<script>
+		//获取屏幕有效的宽和高.
+windowHeight=document.docementElement.clientHeight;
+windowWidth=document.documentElement.clientWidth;
+
+//得到div元素的集合
+
+divs=document.getElementsByTagName("div");
+
+/*js实现方法:
+
+(1):先循环div元素集合.然后为div元素绑定事件;
+
+(2):然后为每个div设置一个line属性,从0~div元素的个数.根据line属性的值判断当前显示的div的索引;
+
+(3):然后滑轮滚动时再判断滚动向上还是向下转动.
+
+(4):然后根据滑动方向显示出当前div的上一个或者下一个,同时将当前对象隐藏起来(通过添加类名来实现隐藏!!)
+
+(5):同时设置上限和下限,到达顶部则上滑时直接return;到达底部下滑则直接return.
+
+*/
+
+for(var i=0;i<pops.length;i++){
+　　divs[i].style.width=windowWidth+"px";
+　　divs[i].style.height=windowHeight+"px";
+　　divs[i].setAttribute("line",i);	
+　　divs[i].onmousewheel=function(){
+　　var line=parseInt(this.getAttribute("line"));
+
+　　if(event.wheelDelta<0){
+　　　　if(line==3){return;}
+　　　　this.classList.remove("show");
+　　　　divs[line+1].classList.add("show");
+　　}else{
+　　　　if(line==0){return;}
+　　　　this.classList.remove("show");
+　　　　divs[line-1].classList.add("show");
+　　　　};
+　　}
+}
+	</script>
+</html>

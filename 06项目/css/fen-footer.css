@@ -1,0 +1,52 @@
+#footer{
+	background-color: #9a9a9d;
+}
+#foot-content{
+	width: 1212px;
+	margin: 0 auto;
+	padding: 50px 0px 20px;
+	text-align: center;
+}
+#foot-content .fen{
+	font-size: 16px;
+	color: #fff;
+}
+#foot-content .wwl{
+	margin: 15px 0px 45px;
+}
+#foot-content .wwl li{
+	display: inline-block;
+	width: 50px;
+	height: 51px;
+	background: url(../images/wx.png) no-repeat;
+	margin: 0px 10px;
+}
+#foot-content .wwl .wx:hover{
+	background-position: 0 -72px;
+}
+#foot-content .wwl .wb:hover{
+	background-position: -70px -72px;
+}
+#foot-content .wwl .lt:hover{
+	background-position: -140px -72px;
+}
+#foot-content .wwl .wb{
+	background-position: -70px 0;
+}
+#foot-content .wwl .lt{
+	background-position: -140px 0;
+}
+#foot-content .word{
+	margin-bottom: 20px;
+}
+#foot-content .word li{
+	display: inline-block;
+}
+#foot-content .word li a{
+	font-size: 18px;
+	color: #fff;
+	margin: 0px 15px;
+}
+#foot-content p{
+	color: #f6f6f6;
+}

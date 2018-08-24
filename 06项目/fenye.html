@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/fen-header.css">
+	<link rel="stylesheet" href="css/fen-footer.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+</head>
+<body>
+	<div id="header">
+		<div class="fLeft logo">
+			<a href="index.html">
+				<img src="images/logo.png" alt="" />
+			</a>
+		</div>
+		<div class="fRight">
+			<ul class="menu">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">会员</a></li>
+				<li><a href="#">页游</a></li>
+				<li><a href="#">客服</a></li>
+				<li><a href="#">论坛</a></li>
+				<li><a href="#">阳台</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="slider">
+		<ul id="imgbox">
+			<li class="select">
+				<img src="images/d1.jpg" alt="" style="width: 100%;height: 100%;">
+			</li>
+			<li>
+				<img src="images/d2.jpg" alt="" style="width: 100%;height: 100%;">
+			</li>
+			<li>
+				<img src="images/d3.jpg" alt="" style="width: 100%;height: 100%;">
+			</li>
+			<li>
+				<img src="images/d4.jpg" alt="" style="width: 100%;height: 100%;">
+			</li>
+			<li>
+				<img src="images/d5.jpg" alt="" style="width: 100%;height: 100%;">
+			</li>
+			<li>
+				<img src="images/d6.jpg" alt="" style="width: 100%;height: 100%;">
+			</li>
+		</ul>
+		<ul id="menubox">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div id="com-sof">
+		<ul id="sof-box" class="clearfix">
+			<h2 class="title">电脑软件</h2>
+		</ul>
+	</div>
+	<div id="move-sof">
+		<ul id="mov-box" class="clearfix">
+			<h2 class="title">移动软件</h2>
+		</ul>
+	</div>
+	<div id="hardware">
+		<ul id="hard-box" class="clearfix">
+			<h2 class="title">智能硬件</h2>
+		</ul>
+	</div>
+	<div id="footer">
+		<div id="foot-content">
+			<p class="fen">成为迅雷的粉丝</p>
+			<ul class="wwl">
+				<li class="wx"></li>
+				<li class="wb"></li>
+				<li class="lt"></li>
+			</ul>
+			<ul class="word">
+				<li><a href="#">关于迅雷</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">加入迅雷</a></li>
+				<li><a href="#">在线客服</a></li>
+				<li><a href="#">迅雷阳台</a></li>
+			</ul>
+			<p>增值电信业务粤B2-20050219号 | 粤网文[2017]0901-125号 | 广电节目经营(粤)字第786号-20050219号 | 互联网出版(粤)字053号</p>
+			<p>Copyright © 2003-2018 XUNLEI.COM All Rights Reserved</p>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/template" id="template">
+	<li>
+		<img src="images/@img@" alt="">
+		<div class="fRight describe">
+			<h5>@softname@</h5>
+			<p>@des@</p>
+			<a href="#">
+				<i class="icon"></i>
+				下载
+			</a>
+			<p class="time">@time@</p>
+		</div>
+	</li>
+</script>
+<script type="text/template" id="template2">
+	<li>
+		<img src="images/@img@" alt="">
+		<div class="fRight describe">
+			<h5>@rname@</h5>
+			<p>@des@</p>
+			<a href="#">
+				<i class="icon"></i>
+				下载
+			</a>
+			<p class="time">@time@</p>
+		</div>
+	</li>
+</script>
+<script type="text/template" id="template3">
+	<li>
+		<img src="images/@img@" alt="">
+		<div class="describe fRight ded">
+			<h5>@softname@</h5>
+			<p>@des@</p>
+			<a href="#">立即购买</a>
+		</div>
+	</li>
+</script>
+<script type="text/javascript">
+	$(function(){
+		function cjFn(url,template,box){
+			this.init(url,template,box);
+		}
+		cjFn.prototype.init = function(url,template,box){
+			$.get(url,function(data){
+				var data = typeof data == "object"?data:eval("("+data+")");
+				var newarry = data.content;
+				for (var i = 0; i < newarry.length; i++) {
+					var templatestring = template.html();
+					var DomString = templateFn(templatestring,newarry[i]);
+					box.append(DomString)
+				}
+			})
+		}
+		function templateFn(temeplateString,data){
+			return temeplateString.replace((/\@([a-z]+)\@/g),function(match,$1,index,string){
+				return data[$1];
+			})
+		}
+		var creatFn = new cjFn('json/json.json',$('#template'),$('#sof-box'));
+		var creatFn1 = new cjFn('json/json1.json',$('#template2'),$('#mov-box'));
+		var creatFn2 = new cjFn('json/json2.json',$('#template3'),$('#hard-box'));
+	})
+</script>

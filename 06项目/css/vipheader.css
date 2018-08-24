@@ -1,0 +1,227 @@
+*{
+	font-family: 'microsoft yahei';
+}
+#headertop{
+	width: 100%;
+	height: auto;
+	background-color: rgb(31, 12, 118);
+	z-index: 100;
+}
+.w{
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+#header .close{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background: url(../images/vip.png) no-repeat -150px -100px;
+	top: 20px;
+	right: 10px;
+}
+#warp-header{
+	width: 100%;
+	height: 70px;
+	background: url(../images/warpbg.png);
+	z-index: 101;
+}
+#warp-header .logo{
+	display: inline-block;
+	width: 102px;
+	height: 40px;
+	margin: 15px 35px 0 0;
+	background: url(../images/xlvip.png) no-repeat;
+}
+.banner{
+	width: 100%;
+	height: 1000px;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	background: url(../images/bg.jpg) no-repeat center top;
+}
+#warp-header .menu li{
+	float: left;
+	line-height: 70px;
+	margin-right: 35px;
+}
+#warp-header .menu li a{
+	font-size: 14px;
+	color: #f6f6f6;
+}
+#warp-header .denglu{
+	display: inline-block;
+	margin: 16px 30px 0 0;
+	position: relative;
+}
+#warp-header .denglu a{
+	color: #f6f6f6;
+	font-size: 14px;
+}
+#warp-header .denglu .bird{
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	border-radius: 50%;
+	background: url(../images/vip-bird.png) no-repeat;
+	border: 2px solid transparent;
+	vertical-align: middle;
+	background-position: -100px 0;
+}
+#warp-header .openvip{
+	position: absolute;
+	width: 243px;
+	height: 53px;
+	top: 70px;
+	left: -66px;
+	background: url(../images/vip-bird.png) no-repeat 0 -100px;
+}
+#warp-header .openvip a{
+	width: 142px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 16px;
+	color: #975500;
+	display: inline-block;
+	background-color: #ffc52a;
+	border-radius: 20px;
+	margin: 5px 0 0 60px;
+	text-align: center;
+	font-weight: 800;
+}
+.yeartitle li{
+	width: 300px;
+	height: 100px;
+	background-color: #5001e4;
+	float: left;
+	position: relative;
+}
+.yeartitle li:after{
+	height: 64px;
+	width: 1px;
+	position: absolute;
+	right: -1px;
+	background-color: #2e0498;
+	z-index: 10;
+	top: 15px;
+}
+.yeartitle li.on{
+	background-color: #fff;
+}
+.yeartitle li .year{
+	background: url(../images/year.png) no-repeat;
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+.yeartitle li.on .yeardes p{
+	color: #1b159c;
+}
+.yeartitle li.on .yeardes span{
+	color: #8b8b8b;
+}
+.yeartitle li .yeardes{
+	width: 190px;
+	margin-top: 20px;
+}
+.yeartitle li .yeardes p{
+	color: #f6f6f6;
+	font-size: 20px;
+}
+.yeartitle li .yeardes span{
+	color: #00ccff;
+	font-size: 14px;
+}
+.yeartitle li .week{
+	background-position: -100px 0px;
+}
+.yeartitle li .nian{
+	background-position: -300px 0px;
+}
+.yeartitle li .qing{
+	background-position: -400px 0px;
+}
+.yeartitle>li:hover{
+	/*background-color: #171369;*/
+}
+.tabcontent{
+	height: 290px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.tabcontent>div{
+	display: none;
+}
+.tabcontent>div.show{
+	display: block;
+}
+.tab-area{
+	padding-top: 10px;
+	height: 100%;
+}
+.pos-div>div{
+	float: left;
+	width: 48%;
+	text-align: center;
+	margin-left: 20px;
+}
+.pos-div>div>p{
+	font-size: 18px;
+	color: #bb680f;
+}
+.bank-left{
+	width: 202px;
+	height: 219px;
+	background-color: #fff5d6;
+	padding-top: 25px;
+	border: 1px solid #fff5d6;
+}
+.bank-left p{
+	color: #bb680f;
+}
+.bank-left a,.bank-right a{
+	display: inline-block;
+	background-color: #fd3f4e;
+	width: 138px;
+	height: 38px;
+	line-height: 38px;
+	color: #f6f6f6;
+	border-radius: 20px;
+	font-size: 16px;
+	margin-top: 20px;
+}
+.bank-right{
+	width: 366px;
+	height: 244px;
+	border: 1px solid #e3e3e3;
+}
+.bank-right>div{
+	margin: 20px 27px 0;
+}
+.bank-right a{
+	background-color: #fff;
+	color: #fd3f4e;
+	border: 1px solid #fd3f4e;
+}
+.huodong>div{
+	width: 360px;
+	height: 192px;
+	background-color: #fff5d6;
+	display: inline-block;
+	margin-left: 28px;
+	margin-top: 40px;
+}
+.huodong>div>div>a{
+	display: inline-block;
+	width: 98px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 15px;
+	text-align: center;
+	color: #dc0000;
+	border: 1px solid #e41e27;
+	margin-top: 20px;
+}
